@@ -61,24 +61,18 @@ const TodoList = () => {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add a new task"
-          className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
-        />
-        <button
-          onClick={addTask}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-        >
+          className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"/>
+        <button onClick={addTask}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
           Add
         </button>
       </div>
-
   
       <ul>
         {tasks.map((task,num) => (
           <li
             key={num}
-            className={`flex justify-between items-center mb-2 p-2 rounded-md ${
-              task.completed ? "bg-green-100" : "bg-gray-100"
-            }`}
+            className={`flex justify-between items-center mb-2 p-2 rounded-md ${task.completed ? "bg-green-100" : "bg-gray-100"}`}
           >
             {editTaskId === task._id ? (
               <>
@@ -86,22 +80,16 @@ const TodoList = () => {
                   type="text"
                   value={editText}
                   onChange={(e) => setEditText(e.target.value)}
-                  className="w-full p-2 border rounded-md"
-                />
+                  className="w-full p-2 border rounded-md"/>
                 <button
                   onClick={()=>{updateTask(task._id)}}
-                  className="bg-green-500 text-white px-4 py-2 ml-2 rounded-md hover:bg-green-600"
-                >
+                  className="bg-green-500 text-white px-4 py-2 ml-2 rounded-md hover:bg-green-600">
                   Save
                 </button>
               </>
             ) : (
               <>
-                <span
-                  className={`flex-1 ${
-                    task.completed ? "line-through text-gray-500" : ""
-                  }`}
-                >
+                <span className={`flex-1 ${task.completed ? "line-through text-gray-500" : ""}`}>
                   {task.text}
                 </span>
                 <div className="flex gap-2">
@@ -126,8 +114,7 @@ const TodoList = () => {
                   </button>
                   <button
                     onClick={() => deleteTask(task._id)}
-                    className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
-                  >
+                    className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">
                     Delete
                   </button>
                 </div>
